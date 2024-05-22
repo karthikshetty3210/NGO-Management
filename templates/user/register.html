@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block title %}Register | {% endblock %}
+{% block maincontent %}
+<div class="container">
+    <div class="row justify-content-evenly">
+        <div class="col-4" id="login-form">
+            <span class="h3">Create your account</span><br><br>
+            <form action="{{url_for('user_module.register') }}" method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="text" placeholder="Enter your name">
+                </div>
+                <div class="mb-3">
+                    <label for="phoneno" class="form-label">Phone number</label>
+                    <input type="number" class="form-control" id="phoneno" placeholder="Enter your phone number">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                </div>
+                <div class="mb-3">
+                    <label for="addr" class="form-label">Address</label>
+                    <textarea rows="5" type="text" class="form-control" id="addr"
+                        placeholder="Enter your full addresss"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="profileImage" class="form-label">Profile photo</label>
+                    <input class="form-control" type="file" id="profileImage">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password">
+                </div>
+
+                <div class="mb-3">
+                    <div class="row">
+                        <div class="col me-auto">
+                            <button name="register" type="submit" class="btn btn-primary">Register</button>
+
+                        </div>
+                        <div class="col">
+                            <span>Already have an account ? Please <a
+                                    href="{{url_for('user_module.login')}}">Login</a></span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
